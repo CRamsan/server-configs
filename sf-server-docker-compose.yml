@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  linuxgsm-sf-volume:
+    image: 'gameservermanagers/gameserver:sf'
+    container_name: sfserver
+    restart: unless-stopped
+    volumes:
+      - 'linuxgsm-sf:/data'
+    ports:
+      - '7777:7777/udp'
+      - '15000:15000/udp'
+      - '15777:15777/udp'
+volumes:
+  linuxgsm-sf: null
